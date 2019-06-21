@@ -8,15 +8,15 @@
 <style>
     #container {
         display: grid;
-        grid-template-rows: 80% 20%;
+        grid-template-rows: auto 80vh auto;
         align-items: center;
         justify-items: center;
     }
 
     #box-container {
-        width: 60vh;
-        height: 60vh;
-        background-color: #81a1c1;
+        grid-row: 2 / 2;
+        width: 60vw;
+        height: 60vw;
         border-radius: 1%;
 
         display: grid;
@@ -28,8 +28,18 @@
         margin: auto;
     }
 
-    #button-container {
+    @media screen and (max-width: 490px) {
+        #box-container {
+            width: 80vw;
+            height: 80vw;
+        }
+    }
 
+    #button-container {
+        grid-row: 3 / 3;
+        display: flex;
+        align-items: center;
+        justify-items: center;
     }
 
 </style>

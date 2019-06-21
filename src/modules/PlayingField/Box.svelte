@@ -8,7 +8,7 @@
     .box {
         width: 90%;
         height: 90%;
-        background-color: #b48ead;
+        background-color: #db88cb;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -28,6 +28,11 @@
 
     .box:nth-child(9) {
         border-bottom-right-radius: 30%;
+    }
+
+    p {
+        font-size: 5vh;
+        margin: 0;
     }
 </style>
 
