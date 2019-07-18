@@ -1,7 +1,14 @@
 <script>
     import { createEventDispatcher } from 'svelte'
-    export let playerMark = "None";
-    export let id;
+    import gameLogicStore from '../../js/gameLogicStore.js';
+    export let state;
+
+    $: playerMark = state.mark;
+    $: id = state.id;
+
+    function executeTurn() {
+        gameLogicStore.executeTurn(id - 1);
+    }
 </script>
 
 <style>
@@ -36,6 +43,10 @@
     }
 </style>
 
-<div class="box">
-    <p>{id}</p>
+<div class="box" on:click={executeTurn}>
+    {#if playerMark !== 'None'}
+    <p>{playerMark}</p>
+    {:else}
+    <p></p>
+    {/if}
 </div>

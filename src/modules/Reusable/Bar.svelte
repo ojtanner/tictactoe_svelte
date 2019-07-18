@@ -13,18 +13,16 @@
         align-items: center;            /* Center horizontally */
         width: 100%;                    
         background-image: linear-gradient(to right, #355479, #8eb3e0);
-
+        height: 10vh;
         font-size: 3em;
     }
 
     .header {
         border-bottom: 1px solid black;
-        height: 60px;
     }
 
     .footer {
         border-top: 1px solid black;
-        height: 100px;
     }
 </style>
 

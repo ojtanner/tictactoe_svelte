@@ -12,7 +12,7 @@
 		background: #d8d8d8;
 
 		display: grid;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: 10vh 80vh 10vh;
 	}
 </style>
 
