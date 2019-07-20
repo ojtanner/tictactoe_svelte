@@ -1,5 +1,11 @@
 <script>
-    export let gameState;
+    import stores from '../../js/gameLogicStore.js';
+    const { CurrentPlayerStore } = stores;
+
+    $: storeState = CurrentPlayerStore.subscribe(data => storeState = data);
+    $: currentPlayer = storeState.currentPlayer;
+    $: winner = storeState.winner;
+    $: uninitialized = typeof winner === 'undefined' ? true : false;
 </script>
 
 <style>
@@ -19,5 +25,13 @@
 </style>
 
 <div class="message-container">
-    <h1>Message goes here!</h1>
+    {#if uninitialized}
+        <h1>First Turn: X</h1>
+    {:else}
+        {#if winner === 'None'}
+            <h1>Current Player: {currentPlayer}</h1>
+        {:else}
+            <h1>Winner: {winner}</h1>
+        {/if}
+    {/if}
 </div>

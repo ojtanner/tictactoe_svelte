@@ -1,13 +1,14 @@
 <script>
     import { createEventDispatcher } from 'svelte'
-    import gameLogicStore from '../../js/gameLogicStore.js';
+    import stores from '../../js/gameLogicStore.js';
     export let state;
+    const { PlayingFieldStore } = stores;
 
     $: playerMark = state.mark;
     $: id = state.id;
 
     function executeTurn() {
-        gameLogicStore.executeTurn(id - 1);
+        PlayingFieldStore.executeTurn(id - 1);
     }
 </script>
 

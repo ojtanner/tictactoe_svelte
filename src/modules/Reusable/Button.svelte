@@ -1,4 +1,6 @@
 <script>
+    import stores from '../../js/gameLogicStore.js';
+    const { PlayingFieldStore } = stores;
 </script>
 
 <style>
@@ -19,6 +21,6 @@
 
 </style>
 
-<button type="button" id="button">
+<button type="button" id="button" on:click={PlayingFieldStore.resetGame}>
     <p>Reset game</p>
 </button>

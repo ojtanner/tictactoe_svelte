@@ -3,7 +3,8 @@
     import Box from './Box.svelte';
     import Button from '../Reusable/Button.svelte';
 
-    import fields from '../../js/gameLogicStore.js';
+    import stores from '../../js/gameLogicStore.js';
+    const { PlayingFieldStore } = stores;
 </script>
 
 <style>
@@ -55,7 +56,7 @@
         </MessageBoard>
     </div>
     <div id="box-container">
-        {#each $fields as field}
+        {#each $PlayingFieldStore as field}
             <Box state={field}></Box>
         {/each}
     </div>
