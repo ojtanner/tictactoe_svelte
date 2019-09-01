@@ -2,7 +2,8 @@
     import stores from '../../js/gameLogicStore.js';
     const { CurrentPlayerStore } = stores;
 
-    $: storeState = CurrentPlayerStore.subscribe(data => storeState = data);
+    let storeState;
+    const unsubscribe = CurrentPlayerStore.subscribe(data => storeState = data);
     $: currentPlayer = storeState.currentPlayer;
     $: winner = storeState.winner;
     $: uninitialized = typeof winner === 'undefined' ? true : false;
